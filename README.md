@@ -103,11 +103,11 @@ Developing real-world penetration testing skills
 
 📫 Contact
 
-💼 LinkedIn: https://linkedin.com/in/yourprofile
+💼 LinkedIn: https://linkedin.com/in/katlegomunisola
 
-📧 Email: your@email.com
+📧 Email: munisolawork@gmail.com
 
-🌍 Website: https://yourdomain.com
+🌍 Website: https://katlego.tech
 
 ⚡ Philosophy
 
