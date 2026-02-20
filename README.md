@@ -1,20 +1,114 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+🔐 Katlego Caangu Munisola – Cybersecurity & Software Engineering Portfolio
 
-# Run and deploy your AI Studio app
+Building secure systems. Designing clean interfaces. Solving real-world problems.
 
-This contains everything you need to run your app locally.
+👨🏾‍💻 About Me
 
-View your app in AI Studio: https://ai.studio/apps/drive/1EcF4BfB944pzAcuWSpeQXMGsWzFf_Q7m
+I'm a Computer Science & Software Engineering student with a strong interest in cybersecurity, secure systems design, and digital infrastructure.
 
-## Run Locally
+I focus on:
 
-**Prerequisites:**  Node.js
+🔐 Cybersecurity & ethical hacking
 
+🌐 Web application security
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+🖥️ Systems & network fundamentals
+
+🎨 UI/UX & graphic design
+
+My goal is to design systems that are not just functional — but secure, scalable, and intentional.
+
+🚀 Live Website
+
+🌍 Portfolio Website:
+https://katlego.tech
+
+🛠️ Technical Skills
+Programming
+
+Python
+
+JavaScript
+
+C / C++
+
+Bash
+
+Cybersecurity
+
+Network scanning (Nmap)
+
+Wireshark analysis
+
+Basic penetration testing
+
+Linux systems
+
+Web Development
+
+HTML5
+
+CSS3
+
+React / Next.js
+
+Git & GitHub
+
+Tools
+
+Kali Linux
+
+Burp Suite
+
+VS Code
+
+Figma
+
+📂 Featured Projects
+🔍 1. Network Vulnerability Scanner
+
+A Python-based tool that scans local networks and reports open ports and possible vulnerabilities.
+
+Tech Used: Python, Nmap
+What I Learned: Network enumeration, automation, socket programming
+
+🌐 2. Secure Portfolio Website
+
+My personal cybersecurity-themed portfolio site built with modern web technologies.
+
+Tech Used: React / HTML / CSS
+Focus: Clean UI, performance, security best practices
+
+📊 3. Public WiFi Security Research (In Progress)
+
+A research project analyzing public WiFi network security practices in Botswana.
+
+Focus Areas:
+
+Encryption standards
+
+Access point configuration
+
+Risk assessment
+
+📈 Current Focus
+
+Building cybersecurity lab projects
+
+Contributing to open-source
+
+Preparing for Security+ / CEH pathway
+
+Developing real-world penetration testing skills
+
+📫 Contact
+
+💼 LinkedIn: https://linkedin.com/in/yourprofile
+
+📧 Email: your@email.com
+
+🌍 Website: https://yourdomain.com
+
+⚡ Philosophy
+
+Security isn’t an add-on. It’s the foundation.
