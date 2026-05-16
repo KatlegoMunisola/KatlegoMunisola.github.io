@@ -1,68 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-cyan: #00f2ff;
-  --color-neon-green: #00ff9d;
-  --color-neon-purple: #bc13fe;
-  --color-dark-bg: #050505;
+  --color-canvas: #F3EED8;
+  --color-primary-sage: #AFC8BB;
+  --color-pale-sage: #B9CDBE;
+  --color-soft-neutral: #DDE2CF;
+  --color-muted-burgundy: #8B5A62;
 }
 
 :root {
-  --bg-dark: #050505;
-  --accent-cyan: #00f2ff;
-  --accent-green: #00ff9d;
-  --accent-purple: #bc13fe;
+  --canvas-bg: #F3EED8;
+  --primary-sage: #AFC8BB;
+  --pale-sage: #B9CDBE;
+  --soft-neutral: #DDE2CF;
+  --muted-burgundy: #8B5A62;
 }
 
 body {
-  font-family: 'Outfit', 'Inter', sans-serif;
-  background-color: var(--bg-dark);
-  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--canvas-bg);
+  color: var(--muted-burgundy);
   overflow-x: hidden;
 }
 
-.font-mono {
-  font-family: 'JetBrains Mono', monospace;
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: 'Playfair Display', serif;
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: var(--canvas-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #22d3ee;
+  background: var(--primary-sage);
   border-radius: 10px;
 }
 
 /* Custom Utilities */
 @layer utilities {
-  .neon-glow-cyan {
-    text-shadow: 0 0 10px rgba(0, 242, 255, 0.6), 0 0 20px rgba(0, 242, 255, 0.4);
+  .border-sharp {
+    border: 1px solid var(--muted-burgundy);
   }
-  .neon-glow-purple {
-    text-shadow: 0 0 10px rgba(188, 19, 254, 0.6), 0 0 20px rgba(188, 19, 254, 0.4);
-  }
-  .neon-glow-green {
-    text-shadow: 0 0 10px rgba(0, 255, 157, 0.6), 0 0 20px rgba(0, 255, 157, 0.4);
-  }
-  .border-glow-cyan {
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.15), inset 0 0 10px rgba(0, 242, 255, 0.05);
-  }
-  .border-glow-purple {
-    box-shadow: 0 0 15px rgba(188, 19, 254, 0.15), inset 0 0 10px rgba(188, 19, 254, 0.05);
-  }
-  .glass-panel {
-    @apply bg-black/40 backdrop-blur-md border border-white/10;
-  }
-  .glass-card {
-    @apply bg-zinc-900/40 backdrop-blur-xl border border-white/5 hover:border-white/10 transition-all duration-300;
-  }
-}
-
-.grid-bg {
-  background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
 }

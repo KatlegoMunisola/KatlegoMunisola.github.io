@@ -1,64 +1,57 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal as TerminalIcon, ChevronDown, ChevronUp } from 'lucide-react';
-import { SectionHeader } from '../SectionHeader';
+import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { PROJECTS } from '../../constants';
 
 export const ProjectsSection = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
-    <section id="projects" className="py-32 px-6 bg-black/40 relative scroll-mt-20">
-      <div className="max-w-6xl mx-auto">
-        <SectionHeader id="04" title="Strategic Assets" subtitle="Featured security and devops case studies" />
+    <section id="projects" className="py-24 px-6 md:px-12 bg-canvas">
+      <div className="max-w-7xl mx-auto">
         
+        <div className="mb-16">
+          <h2 className="text-4xl font-serif font-bold text-muted-burgundy mb-4">SELECTED WORK</h2>
+          <div className="w-12 h-px bg-muted-burgundy"></div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS.map((project, idx) => (
-            <motion.article 
+          {PROJECTS.map((project, index) => (
+            <motion.div 
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="glass-card rounded-lg flex flex-col h-full relative group overflow-hidden border-zinc-800 hover:border-neon-purple/50"
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-pale-sage border-sharp flex flex-col group transition-colors duration-300"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-neon-purple scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-300 shadow-[0_0_10px_#bc13fe]"></div>
-              
-              <div className="p-8 pb-4">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-black/60 rounded border border-white/5 group-hover:border-neon-purple/30 transition-colors">
-                    <TerminalIcon className="w-6 h-6 text-neon-purple" />
-                  </div>
-                  <span className={`text-[10px] font-mono px-2 py-1 rounded border font-bold ${
-                    project.status === 'operational' 
-                      ? 'border-neon-green/30 text-neon-green bg-neon-green/5' 
-                      : 'border-yellow-500/30 text-yellow-500 bg-yellow-500/5'
-                  } uppercase tracking-widest`}>
-                    {project.status}
-                  </span>
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight group-hover:text-neon-purple transition-colors">{project.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-2xl font-serif font-bold mb-3 text-muted-burgundy">
+                  {project.title}
+                </h3>
+                <p className="text-sm font-sans mb-8 text-muted-burgundy/80 leading-relaxed flex-grow">
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-mono bg-black/50 border border-white/10 text-zinc-300 px-3 py-1.5 rounded">
-                      #{tag}
-                    </span>
-                  ))}
+                <div className="mt-auto">
+                   <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-xs font-sans tracking-widest uppercase border border-muted-burgundy/30 px-2 py-1 text-muted-burgundy">
+                          {tag}
+                        </span>
+                      ))}
+                   </div>
                 </div>
               </div>
 
+              {/* STAR Case Study accordion */}
               {project.star && (
-                <div className="mt-auto border-t border-white/5">
+                <div className="border-t border-muted-burgundy/30 mt-auto">
                   <button 
                     onClick={() => setExpandedId(expandedId === project.id ? null : project.id)}
-                    className="w-full py-4 px-8 flex justify-between items-center text-xs font-mono font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors"
+                    className="w-full py-4 px-8 flex justify-between items-center text-xs font-sans font-bold tracking-widest uppercase text-muted-burgundy hover:bg-muted-burgundy hover:text-canvas transition-colors"
                   >
-                    View Case Study (STAR)
+                    VIEW CASE STUDY
                     {expandedId === project.id ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                   </button>
                   <AnimatePresence>
@@ -67,24 +60,24 @@ export const ProjectsSection = () => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden bg-black/40"
+                        className="overflow-hidden bg-muted-burgundy text-canvas"
                       >
-                        <div className="p-8 pt-4 space-y-4 text-sm">
+                        <div className="p-8 space-y-6 text-sm font-sans">
                           <div>
-                            <span className="text-neon-cyan font-bold text-xs uppercase tracking-widest block mb-1">Situation</span>
-                            <p className="text-zinc-300 leading-relaxed">{project.star.situation}</p>
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Situation</span>
+                            <p className="leading-relaxed">{project.star.situation}</p>
                           </div>
                           <div>
-                            <span className="text-yellow-500 font-bold text-xs uppercase tracking-widest block mb-1">Task</span>
-                            <p className="text-zinc-300 leading-relaxed">{project.star.task}</p>
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Task</span>
+                            <p className="leading-relaxed">{project.star.task}</p>
                           </div>
                           <div>
-                            <span className="text-neon-purple font-bold text-xs uppercase tracking-widest block mb-1">Action</span>
-                            <p className="text-zinc-300 leading-relaxed">{project.star.action}</p>
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Action</span>
+                            <p className="leading-relaxed">{project.star.action}</p>
                           </div>
                           <div>
-                            <span className="text-neon-green font-bold text-xs uppercase tracking-widest block mb-1">Result</span>
-                            <p className="text-zinc-300 leading-relaxed">{project.star.result}</p>
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Result</span>
+                            <p className="leading-relaxed">{project.star.result}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -92,9 +85,10 @@ export const ProjectsSection = () => {
                   </AnimatePresence>
                 </div>
               )}
-            </motion.article>
+            </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

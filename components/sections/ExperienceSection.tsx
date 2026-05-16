@@ -1,44 +1,76 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SectionHeader } from '../SectionHeader';
-import { EXPERIENCES } from '../../constants';
+import { EXPERIENCES, CERTIFICATIONS } from '../../constants';
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-32 px-6 max-w-6xl mx-auto scroll-mt-20">
-      <SectionHeader id="03" title="Service History" subtitle="Professional and leadership timeline" />
-      
-      <div className="space-y-12">
-        {EXPERIENCES.map((exp, idx) => (
-          <motion.div 
-            key={exp.company}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: idx * 0.15, duration: 0.5 }}
-            className="relative pl-8 border-l-2 border-zinc-800 hover:border-neon-cyan transition-colors pb-8 group"
-          >
-            <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-zinc-900 border-2 border-zinc-700 group-hover:border-neon-cyan group-hover:shadow-[0_0_10px_#00f2ff] transition-all"></div>
-            <div className="flex flex-wrap justify-between items-start mb-4">
-              <div>
-                <h3 className="text-xl font-bold text-white uppercase tracking-tight group-hover:text-neon-cyan transition-colors">{exp.role}</h3>
-                <p className="text-neon-purple font-mono text-sm font-bold mt-1">{exp.company}</p>
-              </div>
-              <div className="text-zinc-400 font-mono text-xs text-right mt-2 sm:mt-0">
-                <p className="font-bold text-zinc-400">{exp.period}</p>
-                <p className="uppercase tracking-widest mt-1">{exp.location}</p>
-              </div>
-            </div>
-            <ul className="space-y-3 mt-6">
-              {exp.highlights.map((h, i) => (
-                <li key={i} className="text-zinc-300 text-sm flex gap-3 items-start">
-                  <span className="text-neon-green mt-0.5 flex-shrink-0 font-mono text-[10px] font-bold">[OK]</span>
-                  <span className="leading-relaxed">{h}</span>
-                </li>
+    <section id="experience" className="py-24 px-6 md:px-12 bg-canvas">
+      <div className="max-w-7xl mx-auto">
+        
+        <div className="mb-16">
+          <h2 className="text-4xl font-serif font-bold text-muted-burgundy mb-4">EXPERIENCE & CREDENTIALS</h2>
+          <div className="w-12 h-px bg-muted-burgundy"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          {/* Experience Column */}
+          <div>
+            <h3 className="text-2xl font-serif font-bold text-muted-burgundy mb-8">Professional History</h3>
+            <div className="space-y-12">
+              {EXPERIENCES.map((exp, idx) => (
+                <motion.div 
+                  key={exp.company}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="relative pl-6 border-l border-muted-burgundy/30"
+                >
+                  <div className="mb-4">
+                    <h4 className="text-xl font-serif font-bold text-muted-burgundy">{exp.role}</h4>
+                    <p className="text-sm font-sans font-semibold text-muted-burgundy/80 mt-1">{exp.company}</p>
+                    <p className="text-xs font-sans tracking-widest uppercase text-muted-burgundy/60 mt-2">
+                      {exp.period} | {exp.location}
+                    </p>
+                  </div>
+                  <ul className="space-y-2 mt-4">
+                    {exp.highlights.map((h, i) => (
+                      <li key={i} className="text-muted-burgundy/80 text-sm font-sans flex gap-2">
+                        <span className="text-muted-burgundy/50">-</span>
+                        <span className="leading-relaxed">{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
               ))}
-            </ul>
-          </motion.div>
-        ))}
+            </div>
+          </div>
+
+          {/* Certifications Column */}
+          <div>
+            <h3 className="text-2xl font-serif font-bold text-muted-burgundy mb-8">Certifications</h3>
+            <div className="grid grid-cols-1 gap-6">
+              {CERTIFICATIONS.map((cert, idx) => (
+                <motion.div 
+                  key={cert.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-pale-sage p-6 border-sharp"
+                >
+                  <h4 className="text-lg font-serif font-bold text-muted-burgundy mb-2">{cert.name}</h4>
+                  <p className="text-xs font-sans tracking-widest uppercase text-muted-burgundy/70 font-semibold">
+                    {cert.issuer}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
