@@ -16,7 +16,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({ id, title, subtitl
         <div className="h-[1px] flex-grow bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
       </div>
       <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight uppercase">{title}</h2>
-      {subtitle && <p className="text-zinc-500 mt-2 font-mono uppercase tracking-widest text-xs md:text-sm">{subtitle}</p>}
+      {subtitle && <p className="text-zinc-400 mt-2 font-mono uppercase tracking-widest text-xs md:text-sm">{subtitle}</p>}
     </div>
   );
 };

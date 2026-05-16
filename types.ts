@@ -5,6 +5,12 @@ export interface Project {
   description: string;
   tags: string[];
   status: 'operational' | 'in-progress' | 'auditing';
+  star?: {
+    situation: string;
+    task: string;
+    action: string;
+    result: string;
+  };
 }
 
 export interface Skill {
