@@ -68,7 +68,8 @@ export const ExperienceSection = () => {
 
       <MagneticButton
         href="/resume.pdf"
-        download
+        target="_blank"
+        rel="noreferrer"
         className="inline-flex items-center gap-2 mt-12 px-6 py-3 border border-accent text-accent hover:bg-accent/10 transition-colors duration-300 font-mono text-sm tracking-wide"
       >
         View Full Résumé
