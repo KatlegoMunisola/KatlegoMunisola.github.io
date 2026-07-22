@@ -1,4 +1,4 @@
-import { Project, Skill, Experience, Certification } from './types';
+import { Project, Experience, Certification } from './types';
 
 export const PROJECTS: Project[] = [
   {
@@ -76,19 +76,6 @@ export const PROJECTS: Project[] = [
   }
 ];
 
-export const TECHNICAL_SKILLS: Skill[] = [
-  { name: 'Python & C#', category: 'technical', level: 90 },
-  { name: 'TypeScript/React', category: 'technical', level: 85 },
-  { name: 'Linux Admin', category: 'technical', level: 95 },
-  { name: 'CI/CD Pipelines', category: 'technical', level: 88 },
-  { name: 'Cloud Infra', category: 'technical', level: 80 },
-  { name: 'Threat Mgmt', category: 'technical', level: 92 }
-];
-
-export const SOFT_SKILLS: string[] = [
-  'Leadership', 'Strategic Collaboration', 'Crisis Communication', 'Problem Solving'
-];
-
 export const EXPERIENCES: Experience[] = [
   {
     role: 'DevOps Intern',
@@ -99,7 +86,8 @@ export const EXPERIENCES: Experience[] = [
       'Developed mobile app interfaces (Xamarin) with 85% user satisfaction',
       'Oversaw 30+ production incidents, reducing MTTR by 40%',
       'Executed critical patches for 200+ users with zero downtime'
-    ]
+    ],
+    tags: ['Xamarin', 'CI/CD', 'Incident Response']
   },
   {
     role: 'Vice Lead',
@@ -109,7 +97,8 @@ export const EXPERIENCES: Experience[] = [
     highlights: [
       'Coordinated technical workshops for 100+ students',
       'Managed cross-functional development teams'
-    ]
+    ],
+    tags: ['Leadership', 'Community', 'Workshops']
   },
   {
     role: 'Chairman',
@@ -119,7 +108,8 @@ export const EXPERIENCES: Experience[] = [
     highlights: [
       'Leading strategic library initiatives and student advocacy',
       'Overseeing committee operations and member engagement'
-    ]
+    ],
+    tags: ['Leadership', 'Advocacy']
   }
 ];
 

@@ -13,18 +13,13 @@ export interface Project {
   };
 }
 
-export interface Skill {
-  name: string;
-  category: 'technical' | 'soft';
-  level: number; // 0-100
-}
-
 export interface Experience {
   role: string;
   company: string;
   location: string;
   period: string;
   highlights: string[];
+  tags: string[];
 }
 
 export interface Certification {

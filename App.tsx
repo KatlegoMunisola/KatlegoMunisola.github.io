@@ -1,28 +1,25 @@
 import React from 'react';
 import { ScrollProgress } from './components/ui/ScrollProgress';
-import { Navbar } from './components/layout/Navbar';
-import { HeroSection } from './components/sections/HeroSection';
+import { Sidebar } from './components/layout/Sidebar';
 import { AboutSection } from './components/sections/AboutSection';
 import { ProjectsSection } from './components/sections/ProjectsSection';
-import { CoreDisciplinesSection } from './components/sections/CoreDisciplinesSection';
 import { ExperienceSection } from './components/sections/ExperienceSection';
 import { Footer } from './components/layout/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-canvas font-sans text-muted-burgundy">
+    <div className="min-h-screen bg-navy font-sans text-slate">
       <ScrollProgress />
-      <Navbar />
+      <Sidebar />
 
-      <main className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
-        <CoreDisciplinesSection />
-        <ExperienceSection />
-      </main>
-
-      <Footer />
+      <div className="lg:pl-[380px]">
+        <main className="px-8 md:px-12 lg:px-24 max-w-3xl">
+          <AboutSection />
+          <ProjectsSection />
+          <ExperienceSection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
