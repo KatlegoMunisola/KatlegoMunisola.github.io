@@ -6,6 +6,9 @@
   --color-pale-sage: #B9CDBE;
   --color-soft-neutral: #DDE2CF;
   --color-muted-burgundy: #8B5A62;
+  --color-deep-burgundy: #5A343C;
+  --color-accent: #C9962F;
+  --color-accent-soft: #E9D19C;
 }
 
 :root {
@@ -14,6 +17,8 @@
   --pale-sage: #B9CDBE;
   --soft-neutral: #DDE2CF;
   --muted-burgundy: #8B5A62;
+  --deep-burgundy: #5A343C;
+  --accent: #C9962F;
 }
 
 body {
@@ -38,9 +43,45 @@ h1, h2, h3, h4, h5, h6, .font-serif {
   border-radius: 10px;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--deep-burgundy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* Custom Utilities */
 @layer utilities {
   .border-sharp {
     border: 1px solid var(--muted-burgundy);
+  }
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -32px) scale(1.06); }
+  66% { transform: translate(-18px, 18px) scale(0.96); }
+}
+
+.animate-blob {
+  animation: blob-float 16s ease-in-out infinite;
+}
+.animate-blob-delay {
+  animation: blob-float 18s ease-in-out infinite;
+  animation-delay: -6s;
+}
+.animate-blob-delay-2 {
+  animation: blob-float 20s ease-in-out infinite;
+  animation-delay: -11s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animate-blob-delay,
+  .animate-blob-delay-2 {
+    animation: none;
   }
 }

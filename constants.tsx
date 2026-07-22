@@ -39,6 +39,40 @@ export const PROJECTS: Project[] = [
       action: 'Developed a cross-platform Flutter application with real-time crowdsourced data and geolocation.',
       result: 'Improved user convenience significantly by providing accurate, up-to-date ATM availability.'
     }
+  },
+  {
+    id: 'bitewise',
+    title: 'BiteWise — Food Allergy & IBS Management App',
+    description: 'A cross-platform mobile app that helps people managing food allergies and IBS track symptoms, log meals, and catch hidden allergens before they eat.',
+    tags: ['React Native', 'Mobile', 'AI/ML', 'Firebase'],
+    status: 'operational',
+    star: {
+      situation: 'People with food allergies or IBS need to correlate what they eat with symptoms, but ingredient labels routinely hide allergens under unfamiliar names (casein for milk, tahini for sesame, albumen for egg), and there is no fast way to check a home-cooked or restaurant meal. Existing tracking apps handle logging but not allergen detection, and existing scanner apps do not connect back to a personal symptom history.',
+      task: 'Build a local-first, offline-capable tool for my final year project that unifies symptom/meal logging with real allergen detection across packaged, scanned, and home-cooked food.',
+      action: 'Built symptom, food, and daily-factor logging on a local-first SQLite store that syncs to Firebase when online; added a live barcode scanner that checks products against the Open Food Facts database against 14 tracked allergen categories; added an AI-powered meal-photo feature using a vision-language model (Google Gemini via a Cloudflare Workers proxy) for unpackaged or home-cooked meals, clearly labeled as an estimate; wired up Firebase Auth + Firestore for cross-device sync with graceful offline degradation; and used Firebase App Distribution for beta testing.',
+      result: 'Shipped a working cross-platform beta that lets users scan, log, and photograph meals to catch hidden allergens and correlate them with symptoms, fully usable offline.'
+    }
+  },
+  {
+    id: 'vulnerability-scanner',
+    title: 'Network Vulnerability Scanner',
+    description: 'A Python-based tool that scans local networks and reports open ports and possible vulnerabilities, built to learn network enumeration and socket programming.',
+    tags: ['Python', 'Nmap', 'Security'],
+    status: 'operational'
+  },
+  {
+    id: 'secure-portfolio',
+    title: 'Secure Portfolio Website',
+    description: 'This personal cybersecurity-themed portfolio site, built with React and focused on clean UI, performance, and security best practices.',
+    tags: ['React', 'Security', 'UI/UX'],
+    status: 'operational'
+  },
+  {
+    id: 'public-wifi-research',
+    title: 'Public WiFi Security Research',
+    description: 'An ongoing research project analyzing public WiFi network security practices in Botswana, covering encryption standards, access point configuration, and risk assessment.',
+    tags: ['Security', 'Research', 'Networking'],
+    status: 'in-progress'
   }
 ];
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { PROJECTS } from '../../constants';
+import { SectionHeading } from '../ui/SectionHeading';
 
 export const ProjectsSection = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -10,21 +11,20 @@ export const ProjectsSection = () => {
     <section id="projects" className="py-24 px-6 md:px-12 bg-canvas">
       <div className="max-w-7xl mx-auto">
         
-        <div className="mb-16">
-          <h2 className="text-4xl font-serif font-bold text-muted-burgundy mb-4">SELECTED WORK</h2>
-          <div className="w-12 h-px bg-muted-burgundy"></div>
-        </div>
+        <SectionHeading>SELECTED WORK</SectionHeading>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project, index) => (
-            <motion.div 
+            <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-pale-sage border-sharp flex flex-col group transition-colors duration-300"
+              whileHover={{ y: -6 }}
+              className="relative bg-pale-sage border-sharp flex flex-col group transition-shadow duration-300 hover:shadow-xl"
             >
+              <span className="absolute top-0 left-0 h-[3px] w-full bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-2xl font-serif font-bold mb-3 text-muted-burgundy">
                   {project.title}
@@ -32,11 +32,11 @@ export const ProjectsSection = () => {
                 <p className="text-sm font-sans mb-8 text-muted-burgundy/80 leading-relaxed flex-grow">
                   {project.description}
                 </p>
-                
+
                 <div className="mt-auto">
                    <div className="flex flex-wrap gap-2 mb-6">
                       {project.tags.map(tag => (
-                        <span key={tag} className="text-xs font-sans tracking-widest uppercase border border-muted-burgundy/30 px-2 py-1 text-muted-burgundy">
+                        <span key={tag} className="text-xs font-sans tracking-widest uppercase border border-muted-burgundy/30 group-hover:border-accent/60 hover:bg-accent/15 px-2 py-1 text-muted-burgundy transition-colors duration-300">
                           {tag}
                         </span>
                       ))}
@@ -63,20 +63,20 @@ export const ProjectsSection = () => {
                         className="overflow-hidden bg-muted-burgundy text-canvas"
                       >
                         <div className="p-8 space-y-6 text-sm font-sans">
-                          <div>
-                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Situation</span>
+                          <div className="pl-4 border-l-2 border-accent">
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 text-accent">Situation</span>
                             <p className="leading-relaxed">{project.star.situation}</p>
                           </div>
-                          <div>
-                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Task</span>
+                          <div className="pl-4 border-l-2 border-accent">
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 text-accent">Task</span>
                             <p className="leading-relaxed">{project.star.task}</p>
                           </div>
-                          <div>
-                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Action</span>
+                          <div className="pl-4 border-l-2 border-accent">
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 text-accent">Action</span>
                             <p className="leading-relaxed">{project.star.action}</p>
                           </div>
-                          <div>
-                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 opacity-70">Result</span>
+                          <div className="pl-4 border-l-2 border-accent">
+                            <span className="font-bold text-xs uppercase tracking-widest block mb-2 text-accent">Result</span>
                             <p className="leading-relaxed">{project.star.result}</p>
                           </div>
                         </div>

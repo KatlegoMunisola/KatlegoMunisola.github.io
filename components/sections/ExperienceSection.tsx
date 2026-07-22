@@ -1,16 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { EXPERIENCES, CERTIFICATIONS } from '../../constants';
+import { SectionHeading } from '../ui/SectionHeading';
 
 export const ExperienceSection = () => {
   return (
     <section id="experience" className="py-24 px-6 md:px-12 bg-canvas">
       <div className="max-w-7xl mx-auto">
         
-        <div className="mb-16">
-          <h2 className="text-4xl font-serif font-bold text-muted-burgundy mb-4">EXPERIENCE & CREDENTIALS</h2>
-          <div className="w-12 h-px bg-muted-burgundy"></div>
-        </div>
+        <SectionHeading>EXPERIENCE & CREDENTIALS</SectionHeading>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
@@ -27,6 +25,7 @@ export const ExperienceSection = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="relative pl-6 border-l border-muted-burgundy/30"
                 >
+                  <span className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_0_4px_var(--color-accent-soft)]" />
                   <div className="mb-4">
                     <h4 className="text-xl font-serif font-bold text-muted-burgundy">{exp.role}</h4>
                     <p className="text-sm font-sans font-semibold text-muted-burgundy/80 mt-1">{exp.company}</p>
@@ -58,7 +57,8 @@ export const ExperienceSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-pale-sage p-6 border-sharp"
+                  whileHover={{ x: 6 }}
+                  className="bg-pale-sage p-6 border border-muted-burgundy border-l-4 border-l-transparent hover:border-l-accent transition-colors duration-300"
                 >
                   <h4 className="text-lg font-serif font-bold text-muted-burgundy mb-2">{cert.name}</h4>
                   <p className="text-xs font-sans tracking-widest uppercase text-muted-burgundy/70 font-semibold">
