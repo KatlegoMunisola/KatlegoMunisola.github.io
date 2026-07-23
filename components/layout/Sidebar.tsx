@@ -45,9 +45,6 @@ export const Sidebar = () => {
     <header className="lg:fixed lg:inset-y-0 lg:left-0 lg:w-[380px] lg:h-screen flex flex-col justify-between px-8 md:px-12 lg:px-16 py-12 lg:py-24">
       <div>
         <a href="#" onClick={scrollToTop} className="inline-block group">
-          <div className="w-16 h-16 rounded-full overflow-hidden border border-navy-lightest ring-1 ring-accent/20 mb-6">
-            <img src="/profile.jpg" alt="Katlego Munisola" className="w-full h-full object-cover" />
-          </div>
           <h1 className="font-serif text-3xl font-black text-lightest-slate group-hover:text-accent transition-colors duration-300">
             Katlego Munisola
           </h1>
@@ -85,14 +82,14 @@ export const Sidebar = () => {
         </nav>
       </div>
 
-      <div className="flex gap-6 mt-12 lg:mt-0">
-        <a href="https://github.com/KatlegoMunisola" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-slate hover:text-accent hover:-translate-y-1 transition-all duration-300">
+      <div className="flex gap-4 mt-12 lg:mt-0 -ml-2.5">
+        <a href="https://github.com/KatlegoMunisola" target="_blank" rel="noreferrer" aria-label="GitHub" className="p-2.5 text-slate hover:text-accent hover:-translate-y-1 transition-all duration-300">
           <Github className="w-5 h-5" />
         </a>
-        <a href="https://www.linkedin.com/in/katlegomunisola/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-slate hover:text-accent hover:-translate-y-1 transition-all duration-300">
+        <a href="https://www.linkedin.com/in/katlegomunisola/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="p-2.5 text-slate hover:text-accent hover:-translate-y-1 transition-all duration-300">
           <Linkedin className="w-5 h-5" />
         </a>
-        <a href="mailto:munisolawork@gmail.com" aria-label="Email" className="text-slate hover:text-accent hover:-translate-y-1 transition-all duration-300">
+        <a href="mailto:munisolawork@gmail.com" aria-label="Email" className="p-2.5 text-slate hover:text-accent hover:-translate-y-1 transition-all duration-300">
           <Mail className="w-5 h-5" />
         </a>
       </div>
