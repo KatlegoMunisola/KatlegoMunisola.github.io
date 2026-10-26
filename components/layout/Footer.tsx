@@ -1,66 +1,25 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { MagneticButton } from '../ui/MagneticButton';
+import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react';
 
-export const Footer = () => {
-  return (
-    <footer id="contact" className="px-8 md:px-12 lg:px-24 py-24 md:py-32 text-center max-w-3xl mx-auto">
-
-      <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 border border-accent/40 rounded-full text-xs font-mono tracking-widest uppercase text-lightest-slate">
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-        </span>
-        Available for opportunities
-      </span>
-
-      <p className="font-mono text-accent text-sm mb-3">04. What's Next?</p>
-      <h2 className="text-4xl md:text-5xl font-bold text-lightest-slate mb-6 tracking-tight">
-        Get In Touch
-      </h2>
-
-      <p className="font-sans text-slate mb-10 max-w-lg mx-auto leading-relaxed">
-        Currently open for new opportunities and collaborations. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-      </p>
-
-      <MagneticButton
-        href="mailto:munisolawork@gmail.com"
-        className="inline-flex items-center gap-3 px-8 py-4 border border-accent text-accent hover:bg-accent/10 transition-colors duration-300 font-mono text-sm tracking-wide mb-16"
-      >
-        <Mail className="w-4 h-4" />
-        Say Hello
-      </MagneticButton>
-
-      <div className="flex justify-center gap-8 mb-8">
-        <motion.a
-          whileHover={{ scale: 1.15, y: -2 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://github.com/KatlegoMunisola"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub"
-          className="text-slate hover:text-accent transition-colors"
-        >
-          <Github className="w-5 h-5" />
-        </motion.a>
-        <motion.a
-          whileHover={{ scale: 1.15, y: -2 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://www.linkedin.com/in/katlegomunisola/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="LinkedIn"
-          className="text-slate hover:text-accent transition-colors"
-        >
-          <Linkedin className="w-5 h-5" />
-        </motion.a>
+export const Footer = () => (
+  <footer id="contact" className="border-t border-ink/15 py-14 md:py-20">
+    <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
+      <div>
+        <p className="section-kicker mb-4">Have a project in mind?</p>
+        <h2 className="max-w-3xl text-5xl font-black leading-[.9] tracking-[-.07em] text-ink md:text-7xl">Let’s make<br />something useful<span className="text-accent">.</span></h2>
+        <a href="mailto:munisolawork@gmail.com" className="mt-7 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-extrabold text-ink transition-transform hover:-translate-y-1">
+          Say hello <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
       </div>
-
-      <div className="text-xs font-mono text-slate/60 tracking-widest">
-        &copy; {new Date().getFullYear()} Katlego Munisola. All rights reserved.
+      <div className="flex gap-3">
+        <a href="https://github.com/KatlegoMunisola" target="_blank" rel="noreferrer" aria-label="GitHub" className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-paper"><Github size={18} /></a>
+        <a href="https://www.linkedin.com/in/katlegomunisola/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-paper"><Linkedin size={18} /></a>
+        <a href="mailto:munisolawork@gmail.com" aria-label="Email" className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 text-ink transition-colors hover:bg-ink hover:text-paper"><Mail size={18} /></a>
       </div>
-
-    </footer>
-  );
-};
+    </div>
+    <div className="mt-14 flex flex-wrap items-center justify-between gap-3 border-t border-ink/15 pt-5 font-mono text-[10px] uppercase tracking-[.15em] text-muted">
+      <span>© {new Date().getFullYear()} Katlego Munisola</span>
+      <a href="#about" className="transition-colors hover:text-accent">Back to top ↑</a>
+    </div>
+  </footer>
+);

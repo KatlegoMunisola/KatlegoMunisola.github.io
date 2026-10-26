@@ -2,119 +2,92 @@ import { Project, Experience, Certification } from './types';
 
 export const PROJECTS: Project[] = [
   {
-    id: 'nightly-guesthouse',
-    title: 'Nightly Guesthouse Platform',
-    description: 'A comprehensive full-stack solution for booking management with localized compliance integration.',
-    tags: ['Full-Stack', 'Compliance', 'UI/UX'],
+    id: 'bitewise',
+    title: 'BiteWise — Food Allergy & IBS Management App',
+    description: 'A local-first food and symptom tracker that brings allergen checks and AI meal-photo analysis together. Android beta.',
+    tags: ['React Native', 'TypeScript', 'SQLite', 'Firebase'],
     status: 'operational',
     star: {
-      situation: 'Local guesthouses lacked unified booking and compliance management systems.',
-      task: 'Develop a scalable booking platform integrated with regional compliance requirements.',
-      action: 'Architected a full-stack application with real-time availability and compliance reporting modules.',
-      result: 'Streamlined booking operations and ensured 100% adherence to local regulations.'
-    }
-  },
-  {
-    id: 'network-audit',
-    title: 'Network Infrastructure Security Audit',
-    description: 'Comprehensive penetration testing and threat mitigation for enterprise-grade infrastructure.',
-    tags: ['Penetration Testing', 'Security', 'Auditing'],
-    status: 'operational',
-    star: {
-      situation: 'Enterprise infrastructure was vulnerable to sophisticated internal and external threats.',
-      task: 'Conduct a deep-dive security audit and implement proactive defense mechanisms.',
-      action: 'Executed extensive penetration testing and developed a comprehensive threat mitigation strategy.',
-      result: 'Identified and patched critical vulnerabilities, hardening the network infrastructure.'
+      situation: 'People managing food allergies and IBS need to connect meals with symptoms and check foods before they eat.',
+      task: 'Build a mobile tool that supports food and symptom logging, allergen scanning, and meal-photo analysis.',
+      action: 'Built a React Native app with local SQLite logging synced to Firestore, Firebase Authentication, barcode scanning, and AI meal-photo analysis.',
+      result: 'Delivered an Android beta combining offline-capable logging with barcode and photo-based food checks.'
     }
   },
   {
     id: 'atm-scout',
-    title: 'ATM Scout Mobile Application',
-    description: 'Cross-platform discovery tool built with Flutter to locate and monitor ATM statuses.',
-    tags: ['Flutter', 'Mobile', 'Geolocation'],
-    status: 'operational',
-    star: {
-      situation: 'Users frequently faced issues locating functional and stocked ATMs in their vicinity.',
-      task: 'Create a reliable, community-driven mobile application for tracking ATM statuses.',
-      action: 'Developed a cross-platform Flutter application with real-time crowdsourced data and geolocation.',
-      result: 'Improved user convenience significantly by providing accurate, up-to-date ATM availability.'
-    }
-  },
-  {
-    id: 'bitewise',
-    title: 'BiteWise — Food Allergy & IBS Management App',
-    description: 'A cross-platform mobile app that helps people managing food allergies and IBS track symptoms, log meals, and catch hidden allergens before they eat.',
-    tags: ['React Native', 'Mobile', 'AI/ML', 'Firebase'],
-    status: 'operational',
-    star: {
-      situation: 'People with food allergies or IBS need to correlate what they eat with symptoms, but ingredient labels routinely hide allergens under unfamiliar names (casein for milk, tahini for sesame, albumen for egg), and there is no fast way to check a home-cooked or restaurant meal. Existing tracking apps handle logging but not allergen detection, and existing scanner apps do not connect back to a personal symptom history.',
-      task: 'Build a local-first, offline-capable tool for my final year project that unifies symptom/meal logging with real allergen detection across packaged, scanned, and home-cooked food.',
-      action: 'Built symptom, food, and daily-factor logging on a local-first SQLite store that syncs to Firebase when online; added a live barcode scanner that checks products against the Open Food Facts database against 14 tracked allergen categories; added an AI-powered meal-photo feature using a vision-language model (Google Gemini via a Cloudflare Workers proxy) for unpackaged or home-cooked meals, clearly labeled as an estimate; wired up Firebase Auth + Firestore for cross-device sync with graceful offline degradation; and used Firebase App Distribution for beta testing.',
-      result: 'Shipped a working cross-platform beta that lets users scan, log, and photograph meals to catch hidden allergens and correlate them with symptoms, fully usable offline.'
-    }
-  },
-  {
-    id: 'vulnerability-scanner',
-    title: 'Network Vulnerability Scanner',
-    description: 'A Python-based tool that scans local networks and reports open ports and possible vulnerabilities, built to learn network enumeration and socket programming.',
-    tags: ['Python', 'Nmap', 'Security'],
+    title: 'ATM Scout',
+    description: 'A crowdsourced map of ATM cash availability in Botswana. Reports are geofenced to help block remote false reports.',
+    tags: ['Flutter', 'Supabase', 'Mapbox', 'Geolocation'],
     status: 'operational'
   },
   {
-    id: 'secure-portfolio',
-    title: 'Secure Portfolio Website',
-    description: 'This personal cybersecurity-themed portfolio site, built with React and focused on clean UI, performance, and security best practices.',
-    tags: ['React', 'Security', 'UI/UX'],
+    id: 'phishblock',
+    title: 'PhishBlock',
+    description: 'A personal JavaScript cybersecurity project that helps users spot phishing, started after a BIUST ICT alert about rising Office 365 phishing emails.',
+    tags: ['JavaScript', 'Cybersecurity', 'Phishing Defence'],
     status: 'operational'
-  },
-  {
-    id: 'public-wifi-research',
-    title: 'Public WiFi Security Research',
-    description: 'An ongoing research project analyzing public WiFi network security practices in Botswana, covering encryption standards, access point configuration, and risk assessment.',
-    tags: ['Security', 'Research', 'Networking'],
-    status: 'in-progress'
   }
 ];
 
 export const EXPERIENCES: Experience[] = [
   {
+    role: 'Founder',
+    company: 'Ponalo Digital',
+    location: 'Gaborone',
+    period: '2026 – Present',
+    highlights: [
+      'Building apps and websites for small and medium businesses.',
+      'Developing a WhatsApp-based lead and payment management tool for Botswana SMEs.',
+      'Selected for the MASA Innovation Program 2026/27, Cohort 1, with the mobile payments and customer messaging product.'
+    ],
+    tags: ['Product Development', 'SME Tools', 'Mobile Payments']
+  },
+  {
     role: 'DevOps Intern',
     company: 'Botswana Telecommunications Corporation (BTC)',
     location: 'Gaborone',
-    period: 'June 2023 – Oct 2023',
+    period: 'Jun – Jul 2023',
     highlights: [
-      'Developed mobile app interfaces (Xamarin) with 85% user satisfaction',
-      'Oversaw 30+ production incidents, reducing MTTR by 40%',
-      'Executed critical patches for 200+ users with zero downtime'
+      'Designed and developed a website with a mentor to digitise the SIM registration process.',
+      'Led the BOCRA API integration for the SIM registration project.',
+      'Helped implement CI/CD pipelines and improve deployment processes.',
+      'Improved the PASELA experience in the BTC mobile app.',
+      'Researched DevOps tools with a fintech focus and helped automate routine tasks.',
+      'Reviewed project repositories and recommended branch protection rules for an unprotected main branch.',
+      'Documented ongoing projects and open tasks for handover.'
     ],
-    tags: ['Xamarin', 'CI/CD', 'Incident Response']
-  },
-  {
-    role: 'Vice Lead',
-    company: 'Google Student Developers Club',
-    location: 'BIUST',
-    period: 'Aug 2022 – May 2023',
-    highlights: [
-      'Coordinated technical workshops for 100+ students',
-      'Managed cross-functional development teams'
-    ],
-    tags: ['Leadership', 'Community', 'Workshops']
-  },
-  {
-    role: 'Chairman',
-    company: 'Library Ambassadors Committee',
-    location: 'BIUST',
-    period: 'Aug 2021 – Present',
-    highlights: [
-      'Leading strategic library initiatives and student advocacy',
-      'Overseeing committee operations and member engagement'
-    ],
-    tags: ['Leadership', 'Advocacy']
+    tags: ['CI/CD', 'API Integration', 'DevOps', 'Xamarin']
   }
 ];
 
+export const EDUCATION = {
+  degree: 'BSc Computer Science and Software Engineering',
+  institution: 'Botswana International University of Science and Technology (BIUST)',
+  location: 'Palapye, Botswana',
+  period: 'Graduated Sep 2026'
+};
+
+export const ACTIVITIES = [
+  'Vice Lead, Google Developer Student Club (GDSC) BIUST · 2023/24',
+  'Chairperson, Library Ambassadors · 2023/24',
+  'Class Representative, BSc Computer Science and Software Engineering · 2020–2024',
+  'Member, BIUST Innovation Club · 2023/24'
+];
+
+export const SKILL_GROUPS = [
+  { label: 'Software & mobile', skills: 'Python, C++, React, React Native, Flutter, Xamarin' },
+  { label: 'DevOps & delivery', skills: 'CI/CD, deployment processes, Git, GitHub workflows, Docker, API integration' },
+  { label: 'Networking & security', skills: 'Cisco Networking Academy: Endpoint Security and Introduction to IoT; phishing defence' },
+  { label: 'Data & integration', skills: 'MySQL, SQLite, Firestore, Firebase Authentication' },
+  { label: 'Business', skills: 'Microsoft Excel, PowerPoint and Word; written and verbal communication' }
+];
+
 export const CERTIFICATIONS: Certification[] = [
-  { name: 'Cyber Threat Management', issuer: 'Cisco' },
-  { name: 'Data Science & ML Fundamentals', issuer: 'IBM / Coursera' },
-  { name: 'Online Leadership Certification', issuer: 'MCW Global' }
+  { name: 'Cyber Security Consulting Job Simulation', issuer: 'PwC US · Forage', date: 'Oct 2026' },
+  { name: 'Aspire Leaders Program', issuer: 'Aspire Institute', date: '2025' },
+  { name: 'Online Leadership Course', issuer: 'MCW Global', date: 'Nov 2024' },
+  { name: 'Endpoint Security', issuer: 'Cisco Networking Academy' },
+  { name: 'Introduction to IoT', issuer: 'Cisco Networking Academy' },
+  { name: 'CompTIA Security+', issuer: 'In progress' }
 ];

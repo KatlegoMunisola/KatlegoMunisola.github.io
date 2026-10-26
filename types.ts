@@ -25,4 +25,5 @@ export interface Experience {
 export interface Certification {
   name: string;
   issuer: string;
+  date?: string;
 }
